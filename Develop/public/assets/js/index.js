@@ -186,8 +186,6 @@ const renderNoteList = async (notes) => {
 // Move getAndRenderNotes outside renderNoteList
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-// ... (other code below)
-
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);

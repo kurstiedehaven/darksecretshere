@@ -6,13 +6,13 @@ const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 const app = express();
 
-// Start program on PORT location
+// Set port
 const PORT = process.env.PORT || 3001;
 
 // middleware for json
 app.use(express.json());
 
-// Serve static files from the 'public' directory
+// middleware for urlencoded
 app.use(express.static('public'));
 
 // GET request for HTTP
@@ -43,7 +43,7 @@ app.post('/api/notes', (req, res) => {
     notes.push(newNote);
     // Write the updated array back to the db.json file
     fs.writeFileSync(path.join(__dirname, 'db', 'db.json'), JSON.stringify(notes));
-    res.json(newNote); // Return the new note to the client
+    res.json(newNote);
 });
 
 // Delete a note based on its ID
