@@ -48,7 +48,7 @@ For additional questions, you can reach me through:
 
 - Linked to deployed Application:
   https://kurstiedehaven.github.io/darksecretshere/
-  
-  ![Screenshot 2024-03-12 at 9 00 12 PM](https://github.com/kurstiedehaven/darksecretshere/assets/134163209/6944db78-24e8-425c-b524-bcf863c09b4f)
+
+- ![Screenshot 2024-03-12 at 9 00 12 PM](https://github.com/kurstiedehaven/darksecretshere/assets/134163209/6944db78-24e8-425c-b524-bcf863c09b4f)
 
 You can reach me via email or on LinkedIn.
