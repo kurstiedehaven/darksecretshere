@@ -6,13 +6,13 @@ const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 const app = express();
 
-// Set port
+// Start program on PORT location
 const PORT = process.env.PORT || 3001;
 
 // middleware for json
 app.use(express.json());
 
-// middleware for urlencoded
+// Serve static files from the 'public' directory
 app.use(express.static('public'));
 
 // GET request for HTTP
@@ -43,7 +43,7 @@ app.post('/api/notes', (req, res) => {
     notes.push(newNote);
     // Write the updated array back to the db.json file
     fs.writeFileSync(path.join(__dirname, 'db', 'db.json'), JSON.stringify(notes));
-    res.json(newNote);
+    res.json(newNote); // Return the new note to the client
 });
 
 // Delete a note based on its ID
@@ -57,7 +57,10 @@ app.delete('/api/notes/:id', (req, res) => {
   if (index !== -1) {
     // Remove the note from the array
     notes.splice(index, 1);
+
+    // Write the updated array back to the db.json file
     fs.writeFileSync(path.join(__dirname, 'db', 'db.json'), JSON.stringify(notes));
+
     res.json({ success: true, message: 'Note deleted successfully' });
   } else {
     res.status(404).json({ success: false, message: 'Note not found' });
