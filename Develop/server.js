@@ -57,10 +57,7 @@ app.delete('/api/notes/:id', (req, res) => {
   if (index !== -1) {
     // Remove the note from the array
     notes.splice(index, 1);
-
-    // Write the updated array back to the db.json file
     fs.writeFileSync(path.join(__dirname, 'db', 'db.json'), JSON.stringify(notes));
-
     res.json({ success: true, message: 'Note deleted successfully' });
   } else {
     res.status(404).json({ success: false, message: 'Note not found' });
